@@ -1,0 +1,11 @@
+/* CSS declarations go here */
+
+.prod-image {
+  border: 3px solid black;
+  width: 24%;
+}
+
+#heading {
+  font-family: Lato;
+  text-align: center;
+}

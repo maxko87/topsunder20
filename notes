@@ -1,0 +1,6 @@
+BASE URL: 
+http://www1.macys.com/shop/womens-clothing/womens-clearance?id=24118&edge=hybrid#!fn=DEPARTMENT_TYPE%3DTops%26PRICE%3D0%7C20%26sortBy%3DTOP_RATED%26productsPerPage%3D100&!qvp=iqvp
+
+SELECT ALL PROD LINKS:
+$('.productThumbnailLink.imageLink').each(function(){console.log(this.href);})
+

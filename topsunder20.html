@@ -1,0 +1,25 @@
+<head>
+  <title>Tops Under 20</title>
+</head>
+
+<body>
+  <div id="heading">
+    <h1>Tops Under $20</h1>
+    <h3>We find discounted tops, usually retailing for $40-100, on sale for under $20 from all across the web.</h3> 
+  </div>
+  {{> products}}
+</body>
+
+<template name="products">
+  {{#each products}}
+    {{> product}}
+  {{/each}}
+</template>
+
+<template name="product">
+  <span class="product">
+    <a href={{link}}>
+      <img class="prod-image" src={{img}}>
+    </a>
+  </div>
+</template>
