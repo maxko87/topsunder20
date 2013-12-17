@@ -19,6 +19,12 @@ if (Meteor.isClient) {
     return Tops.find({}, {});
   };
 
+  Template.product.notouch = function() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
+      return "no-touch";
+    }
+    return "";
+  }
 
   // Template.hello.greeting = function () {
   //   return "Welcome to topsunder20.";
