@@ -10,9 +10,11 @@
 </body>
 
 <template name="products">
-  {{#each products}}
-    {{> product}}
-  {{/each}}
+  <div class="products">
+    {{#each products}}
+      {{> product}}
+    {{/each}}
+  </div>
 </template>
 
 <template name="product">
