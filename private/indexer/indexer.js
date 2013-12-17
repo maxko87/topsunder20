@@ -42,7 +42,7 @@ casper.then(function() {
     return JSON.stringify(results);
   });
 
-  fs.write('../../public/tops.json', res); 
+  fs.write('../../private/tops.json', res); 
 
 
 });

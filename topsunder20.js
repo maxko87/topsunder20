@@ -34,24 +34,19 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+  console.log('starting server');
   Meteor.startup(function () {
     if (Tops.find().count() == 0){
-      var fs = Npm.require('fs');
-      var sys = Npm.require('sys');
-      var exec = Npm.require('child_process').exec;
-      fs.readFile(process.env.PWD + '/public/tops.json', Meteor.bindEnvironment(
-        function(err, data){
-          if (err) throw err;
-          tops = JSON.parse(data);
-          items = tops.items;
-          for (var i=0; i<items.length; i++){
-            Tops.insert({link: items[i].link, img: items[i].img, name: items[i].name, orig_price: items[i].orig_price, new_price: items[i].new_price});
-          }
-        },
-        function(e){
-          console.log('bind failure');
-        }
-      ));
+      console.log('count==0');
+      // var fs = Npm.require('fs');
+      // var sys = Npm.require('sys');
+      // var exec = Npm.require('child_process').exec;
+
+      var tops = JSON.parse(Assets.getText('tops.json'));
+      items = tops.items;
+      for (var i=0; i<items.length; i++){
+        Tops.insert({link: items[i].link, img: items[i].img, name: items[i].name, orig_price: items[i].orig_price, new_price: items[i].new_price});
+      }
     }
   });
 }
