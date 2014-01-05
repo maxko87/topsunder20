@@ -8,3 +8,4 @@ preserve-inputs
 bootstrap
 autopublish
 jquery
+cron-tick

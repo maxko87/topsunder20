@@ -3,13 +3,36 @@ body {
   font-weight: 100;
 }
 
-h1 {
-  font-size: 90px;
-  font-weight: 100;
-  margin-left: 20px;
-  line-height: 120px;
-  font-family: Lato;
+#heading {
+  width: 610px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#heading-title {
+  font-family: "Century Gothic", "Tw Cen MT", Futura, "URW Gothic L", Arial, sans-serif;
+  font-size: 64px;
+  color: white;
+  padding-top: 60px;
+  background-color: black;
   text-align: center;
+  height: 90px;
+  width: 100%;
+}
+
+#heading-subtitle {
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+  font-size: 16px;
+  background-color: white;
+  border: 4px solid black;
+  height: 30px;
+  width: 360px;
+  margin-top: -25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 12px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .prod-image {
@@ -36,7 +59,7 @@ h1 {
   height: 100px;
   position: absolute;
   top: 260px;
-  -webkit-filter: blur(5px) opacity(80%);
+  -webkit-filter: opacity(80%);
 }
 
 #blur-image img{
@@ -45,6 +68,7 @@ h1 {
 }
 
 .products {
+  padding-top: 40px;
   max-width: 880px;
   margin-left: auto;
   margin-right: auto;
@@ -57,8 +81,8 @@ h1 {
 }
 
 .product:hover {
-  box-shadow: 0px 0px 2px 1px #777;
-  border: px solid #333;
+  border: 1px solid #DDD;
+  box-shadow: 0px 0px 2px 1px #AAA;
 }
 
 .product:hover > a > .overlay {
@@ -86,13 +110,21 @@ h1 {
   margin-right: 5px;
 }
 
+#old-price {
+  text-decoration: line-through;
+}
+
+#new-price {
+  color: #3F3;
+}
+
 .bordered {
   overflow: hidden;
   /*-moz-border-radius: 5px;*/
   /*-webkit-border-radius: 5px;*/
   /*border-radius: 5px;*/
   /*border-radius: 5px;*/
-  border: 1px solid #777;
+  border: 1px solid #DDD;
   display: inline-block;
 }
 

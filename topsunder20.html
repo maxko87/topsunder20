@@ -3,11 +3,17 @@
 </head>
 
 <body>
-  <div id="heading">
-    <h1>Tops Under Twenty</h1>
-  </div>
+  {{> heading}}
   {{> products}}
 </body>
+
+<template name="heading">
+  <div id="heading">
+    <div id="heading-title">Tops Under $20</div>
+    <div id="heading-subtitle">Treat yourself to a little something</div>
+  </div>
+</template>
+
 
 <template name="products">
   <div class="products">
