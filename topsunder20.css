@@ -10,10 +10,11 @@ body {
 }
 
 #heading-title {
-  font-family: "Century Gothic", "Tw Cen MT", Futura, "URW Gothic L", Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
   font-size: 64px;
   color: white;
-  padding-top: 60px;
+  padding-top: 45px;
   background-color: black;
   text-align: center;
   height: 90px;
@@ -21,8 +22,8 @@ body {
 }
 
 #heading-subtitle {
-  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
-  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   background-color: white;
   border: 4px solid black;
   height: 30px;

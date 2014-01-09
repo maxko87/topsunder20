@@ -9,3 +9,4 @@ bootstrap
 autopublish
 jquery
 cron-tick
+phantomjs

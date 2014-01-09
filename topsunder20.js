@@ -2,15 +2,32 @@ Tops = new Meteor.Collection("tops")
 
 if (Meteor.isClient) {
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-46866521-1', 'topsundertwenty.com');
-  ga('send', 'pageview');
+  // setup Google Analytics
+  // To log an event, e.g.:
+  // window._gaq.push(['_trackEvent','FAQ','Click',Session.get('server_id')]);
+  GAQ_ACCOUNT = 'UA-46866521-1'
+  Template.products.created = function() {
+    if (!window._gaq) {
+      window._gaq = [];
+      var pluginUrl = 
+       '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+      _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+      _gaq.push(['_setAccount', GAQ_ACCOUNT]);  
+      if (!Session.get('pageview_tracked')) {
+        _gaq.push(['_trackPageview']);      
+      }
+      Session.set('pageview_tracked',true); // prevent hot code push from tracking another pageview
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    }
+  };
 
   WebFontConfig = {
-    google: { families: [ 'Lato:400,700,900,400italic:latin', 'IM+Fell+Great+Primer:400,400italic:latin' ] }
+    google: { families: [ 'Playfair+Display:400,400italic', 'Montserrat' ] }
   };
   (function() {
     var wf = document.createElement('script');
@@ -55,6 +72,7 @@ var reloadTops1 = function(){
 
 
 var reloadTops2 = function(){
+  console.log("reloading 2");
   Tops.remove({});
   var tops = JSON.parse(Assets.getText('tops.json'));
   items = tops.items;
@@ -71,7 +89,7 @@ if (Meteor.isServer) {
     }
   });
 
-  var MyCron = new Cron(1000*60*60*1); //one hour
+  var MyCron = new Cron(1000*60*60*6); // 6 hours
   MyCron.addJob(1, function() {
     reloadTops1();
   });

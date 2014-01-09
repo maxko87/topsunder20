@@ -1,0 +1,1 @@
+Npm.depends({'casperjs': '1.1.0-beta3'});
