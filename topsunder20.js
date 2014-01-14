@@ -39,7 +39,6 @@ if (Meteor.isClient) {
     s.parentNode.insertBefore(wf, s);
   })(); 
 
-
   Template.products.products = function() {
     return Tops.find({}, {});
   };
@@ -62,6 +61,18 @@ if (Meteor.isClient) {
   //       console.log("You pressed the button");
   //   }
   // });
+
+  Meteor.startup(function(){
+    var loadScript = function() {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      // script.src = 'http://zinc.io/zinc_checkout/checkout.js';
+      script.src = 'https://dl.dropboxusercontent.com/spa/qjopb1dsqoaxdqh/zinc_checkout/checkout.js'
+      script.id = "zinc-checkout"
+      document.body.appendChild(script);
+    };
+    window.onload = loadScript();
+  });
 }
 
 var reloadTops1 = function(){

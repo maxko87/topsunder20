@@ -10,3 +10,4 @@ autopublish
 jquery
 cron-tick
 phantomjs
+external-file-loader
